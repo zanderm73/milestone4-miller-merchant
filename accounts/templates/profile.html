@@ -1,15 +1,15 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 
-{% block page_title %}{{ user }}'s Profile{% endblock %} 
+{% block page_title %}{{ user }}'s Profile{% endblock %}
 
 {% block page_heading %}
 
     {{ user }}'s Profile
 
-{% endblock %} 
+{% endblock %}
 
 {% block content %}
 
-    <p>{{ profile.email }}</p>
+    <p>Hi {{ profile.first_name }} thanks for visiting Miller's Merchant website today. If there is anything mroe we can do to help then please let us know</p>
 
 {% endblock %}

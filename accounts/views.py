@@ -9,13 +9,13 @@ def index(request):
     """Return the index.html file"""
     return render(request, 'index.html')
 
-@login_required    
+@login_required
 def logout(request):
     """Log the user out"""
     auth.logout(request)
     messages.success(request, "You have successfully been logged out!")
     return redirect(reverse('index'))
-    
+
 def login(request):
     """Return a login page"""
     if request.user.is_authenticated:
@@ -26,7 +26,7 @@ def login(request):
         if login_form.is_valid():
             user = auth.authenticate(username=request.POST['username'],
                                     password=request.POST['password'])
-            messages.success(request, "You have successfully logged in!")
+            messages.success(request, 'You have logged in, welcome back'),
 
             if user:
                 auth.login(user=user, request=request)
@@ -60,7 +60,7 @@ def registration(request):
         registration_form = UserRegistrationForm()
     return render(request, 'registration.html', {
         "registration_form": registration_form})
-        
+
 def user_profile(request):
     """The user's profile page"""
     user = User.objects.get(email=request.user.email)
