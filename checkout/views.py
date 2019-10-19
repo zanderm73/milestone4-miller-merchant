@@ -5,7 +5,7 @@ from .forms import MakePaymentForm, OrderForm
 from .models import OrderLineItem
 from django.conf import settings
 from django.utils import timezone
-from products.models import Product
+from product.models import Product
 import stripe
 
 # Create your views here.
