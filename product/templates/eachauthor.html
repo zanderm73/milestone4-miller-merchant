@@ -2,12 +2,12 @@
 
 {% block content %}
 
+        <h2>Author Bio</h2>
 <div>
     {% for product in product %}
-        <h2>{{ product.title }}</h2>
-        <h4><a href="{% url 'eachauthor' product.id %}">{{ product.authors }}</a></h4>
+        <h3>{{ product.authors.name }}</h3>
+        <h3>{{ product.authors.author_bio }}</h3>
 
     {% endfor %}
-
 </div>
 {% endblock %}

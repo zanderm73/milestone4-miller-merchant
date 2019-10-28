@@ -1,4 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
-<p>hello world author</p>
+
+<p>Author List</p>
+
+    {% for product in product %}
+
+    <p><a href="{% url 'eachauthor' product.id %}">{{ product.authors.name }}</a></p>
+
+    {% endfor %}
+
 {% endblock %}

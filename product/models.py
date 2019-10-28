@@ -11,8 +11,11 @@ class Publisher(models.Model):
 
 
 class Author(models.Model):
-
     name = models.CharField(max_length=100, default='name')
+    author_bio = models.CharField(max_length=1000, default='author-bio')
+    author_image = models.ImageField(upload_to='images', default='')
+    nationality = models.CharField(max_length=100, default='nationality')
+    date_of_birth = models.DateField(default='1990-08-08')
 
     def __str__(self):
         return self.name

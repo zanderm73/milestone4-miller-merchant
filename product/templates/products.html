@@ -10,10 +10,10 @@
             <div class="panel-body">
                 <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
 
-                <h3>{{ product.title }}</h3>
+                <h3><a href="{% url 'eachproduct' product.id %}">{{ product.title }}</a></h3>
                 <p class="product-description">{{ product.title }}</p>
                 <p>{{ product.publisher  }}</p>
-                <p>{{ product.authors  }}</p>
+                <p>{{ product.authors  }}</a></p>
                 <p>£{{ product.price  }}</p>
 
 
