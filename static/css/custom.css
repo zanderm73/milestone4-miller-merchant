@@ -8,11 +8,12 @@ footer {
     padding-top: 20px;
     padding-bottom: 20px;
     border-top: 1px solid #ededed;
-    color: #A9A9A9;
+    color: white;
+    background-color: #044e96;
 }
 
 .icon-bar {
-    background-color: #fff;
+    background-color: #4abdac;
 }
 
 .accountform {
@@ -63,4 +64,8 @@ caption p {
 
 .product-description {
     min-height: 40px;
+}
+
+.navbar {
+
 }
