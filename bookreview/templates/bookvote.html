@@ -1,8 +1,20 @@
 {% extends "base.html" %}
 {% load static from staticfiles %}
 {% load bootstrap_tags %}
-
 {% block content %}
+<div class="container">
+<p>hello</p>
+
+    {% for bookreview in bookreview %}
+        {% if bookreview.active == "yes" %}
+            <div class="panel-body col-xs-12 col-sm-4 text-center">
+                <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ bookreview.bookimage }}')"></div>
+                <p>{{ bookreview.bookname }}</p>
+                <p>{{ bookreview.authorscomments }}</p>
+            </div>
+        {% endif %}
+    {% endfor %}
+        
 <form method="POST">
     <div class="form-group col-md-6">
         {% csrf_token %} {{ comment_form | as_bootstrap }}
@@ -10,5 +22,5 @@
     </div>
 </form>
 
-
+</div>
 {% endblock %}

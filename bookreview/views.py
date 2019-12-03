@@ -8,19 +8,26 @@ from .forms import UserCommentForm
 from django.db import IntegrityError
 
 # Create your views here.
-@login_required()
-def book_review(request):
+def review_landing(request):
+    reviewlanding = BookReview.objects.all()
+    return render(request, "landingbookreview.html", {"reviewlanding": reviewlanding})
+
+
+def each_book_review(request):
     bookreview = BookReview.objects.all()
     return render(request, "bookreview.html", {"bookreview": bookreview})
+
 
 @login_required()
 def view_votes(request):
     viewvote = UserVote.objects.all()
-    return render(request, "viewvotes.html", {"viewvote": viewvote})
+    bookreview = BookReview.objects.all()
+    return render(request, "viewvotes.html", {"viewvote": viewvote, "bookreview": bookreview})
 
 @login_required()
 def book_vote(request):
     comment_form = UserCommentForm(request.POST or None)
+    bookreview = BookReview.objects.all()
     if comment_form.is_valid():
         bookvote = comment_form.save(commit=False)
         bookvote.loggeduser = request.user
@@ -29,4 +36,4 @@ def book_vote(request):
             messages.success(request, "You have voted")
         except IntegrityError:
             messages.error(request, "You have already voted this month")
-    return render(request, "bookvote.html", {"comment_form": comment_form})
+    return render(request, "bookvote.html", {"comment_form": comment_form, "bookreview": bookreview})

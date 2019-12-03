@@ -11,6 +11,7 @@ class BookReview(models.Model):
     bookreview = models.CharField(max_length=1000, default='')
     authorscomments = models.CharField(max_length=1000, default='')
     active = models.CharField(max_length=5, default='no')
+    bookofthemonth = models.CharField(max_length=5, default='no')
 
     def __str__(self):
         return self.bookname

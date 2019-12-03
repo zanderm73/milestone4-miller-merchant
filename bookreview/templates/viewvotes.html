@@ -1,15 +1,26 @@
 {% extends 'base.html' %}
-    {% block content %}
-    <div class="row row-flex">
-        {% for uservote in viewvote %}
-        <div class="col-xs-12 comment-box">
-            <div class="panel-body">
-                <p>{{ uservote.loggeduser }}</p>
-                <p>{{ uservote.book }}</p>
-                <p>{{ uservote.comment }}</p>
-            </div>
-        </div>    
-        {% endfor %}
+{% block content %}
+<div class="row row-flex">
+    <div class="col-xs-12 container title">
+        <h2>Book Of The Month Current Standings</h2>
     </div>
-
-    {% endblock %}
+    {% for bookreview in bookreview %}
+        {% if bookreview.active == "yes" %}
+            <div class="panel-body col-xs-12 col-sm-4 text-center">
+                <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ bookreview.bookimage }}')"></div>
+                <p>{{ bookreview.bookname }}</p>
+                <p>{{ bookreview.authorscomments }}</p>
+            </div>
+        {% endif %}
+    {% endfor %}
+    {% for uservote in viewvote %}
+    <div class="col-xs-12 comment-box">
+        <div class="panel-body">
+            <p>{{ uservote.loggeduser }}</p>
+            <p>{{ uservote.book }}</p>
+            <p>{{ uservote.comment }}</p>
+        </div>
+    </div>    
+    {% endfor %} 
+</div>
+{% endblock %}

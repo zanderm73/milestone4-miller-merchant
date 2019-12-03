@@ -1,6 +1,5 @@
 body {
     font-family: Arial;
-    padding-top: 100px;
 }
 
 footer {
@@ -66,6 +65,23 @@ caption p {
     min-height: 40px;
 }
 
-.navbar {
+.landing-button {
+    padding-bottom: 10px;
+}
 
+.panel-body {
+    max-height: 400px;
+}
+
+
+/*----------------bookreview--bookreview.html*/
+
+@media screen and (max-width: 992px) {
+    .bookreview-body {
+        text-align: center;
+    }
+}
+
+.bookimage {
+    max-height: 400px;
 }

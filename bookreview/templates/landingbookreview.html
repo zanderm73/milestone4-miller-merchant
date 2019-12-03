@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row row-flex">
+    <div class="col-xs-12 container title text-center">
+        <h2>Landing Page</h2>
+    </div>
+    <div class="col-xs-12 container landing-page-description">
+        <p>
+            Each month we have a competition where you are able to vote and win. On the first of each month we 
+            preview three books on Miller Merchant and allow you to vote  on what one you think we should add to 
+            our store.
+        </p>
+        <p>
+            Once the votes have been calculated and the winning book confirmed at the end of the month it will then 
+            be added. What makes it special is that the first 100 copies of the winning book will be signed by the 
+            author so make sure that you are quick to grab your copy.  
+        </p>
+        <p>
+            Everyone that votes is automatically enrolled into our prize draw and the winner will be selected at random 
+            and the lucky voter will win a copy of the signed book with a personalised message from the author. 
+        </p>
+        <p>
+            Every month we will have an exclusive interview with the author of the winning book. They will give you an 
+            insight into the thinking behind the book and really set the scene while your copy is on its way to you. 
+        </p>
+        <p>
+            To get access to the competition and read the authors interview you must be a member of our site. If you are 
+            already a member then select what area you want to look at. If you haven’t created an account then what are 
+            you waiting for? It is 100% free and always will be, just tap register at the top of the page.
+        </p>
+    </div>
+    <div class="col-xs-12 container landing-page-button-div">
+        <div class="col-xs-12 col-md-4 text-center landing-button">
+            <a href="{% url 'bookvote' %}" class="btn btn-primary btn-lg active" role="button">Vote For Book Of The Month</a>
+        </div>
+        <div class="col-xs-12 col-md-4 text-center landing-button">
+            <a href="{% url 'viewvotes' %}" class="btn btn-primary btn-lg active" role="button">Live Book Voting Score</a>
+        </div>
+        <div class="col-xs-12 col-md-4 text-center landing-button">
+            <a href="{% url 'eachbookreview' %}" class="btn btn-primary btn-lg active" role="button">Book Of The Month Review</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}
