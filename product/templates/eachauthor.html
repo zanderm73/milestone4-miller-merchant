@@ -1,13 +1,19 @@
 {% extends 'base.html' %}
-
 {% block content %}
-
-        <h2>Author Bio</h2>
-<div>
-    {% for product in product %}
-        <h3>{{ product.authors.name }}</h3>
-        <h3>{{ product.authors.author_bio }}</h3>
-
-    {% endfor %}
-</div>
+{% for product in product %}
+    <div class="bookreview-body">
+        <div class="col-xs-12 col-md-6">
+            <h3 class="page-heading">{{ product.authors.name }}</h3>
+            <p>Date Of Birth: {{ product.authors.date_of_birth }}</p>
+            <p>Nationality: {{ product.authors.nationality }}</p>
+            <p>{{ product.authors.author_bio }}</p>
+        </div>  
+        <div class="bookreview-image col-xs-12 col-md-6 text-center">
+            <img class="bookimage" src= {{MEDIA_URL}}{{product.authors.author_image}}>
+        </div>
+        <div class="button">
+            <a href="{{ request.META.HTTP_REFERER }}" class="btn btn-primary custom-button">Back To Book</a>
+        </div>
+    </div>
+{% endfor %}
 {% endblock %}

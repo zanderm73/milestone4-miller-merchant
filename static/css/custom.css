@@ -83,5 +83,82 @@ caption p {
 }
 
 .bookimage {
-    max-height: 400px;
+    max-height: 300px;
+}
+
+
+/*----------------product--products.html*/
+
+.panel-default > .panel-heading-custom {
+    background-color: #044e96;
+    height: 75px;
+}
+
+.product-title-link {
+    color: white;
+}
+
+.product-title-link:hover {
+    color: #DBB04AFF;
+    text-decoration: none;
+}
+
+.product {
+    margin-bottom: 5px;
+}
+
+.custom-button   {
+    background-color: #044e96;
+    color: white;
+    background-image: none;
+    margin-top: 5px;
+    border-color: #044e96;
+}
+
+.custom-button-gold   {
+    background-color: #d69d18;
+    color: white;
+    background-image: none;
+    border-color: #DBB04AFF;
+    font-weight: bold;
+}
+
+.custom-button:hover   {
+    background-color: #044e96;
+    color: #DBB04AFF;
+    background-image: none;
+    border-color: #DBB04AFF;
+}
+
+.custom-button-gold:hover   {
+    background-color: #d69d18;
+    color: #044e96;
+    background-image: none;
+    border-color: #044e96;
+}
+
+a {
+    color:#044e96;
+}
+
+.panel-vote {
+    max-height: 300px;
+}
+
+.page-heading   {
+    color: #044e96;
+}
+
+@media screen and (max-width: 992px) {
+    .page-heading {
+        text-align: center;
+    }
+}
+
+.add-to-cart-eachproduct    {
+    margin-top: 10px;
+}
+
+.label-add-to-cart-eachproduct  {
+    text-align: left;
 }
