@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.db.models import Count
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
@@ -22,17 +23,19 @@ def each_book_review(request):
 def view_votes(request):
     viewvote = UserVote.objects.all()
     bookreview = BookReview.objects.all()
-    return render(request, "viewvotes.html", {"viewvote": viewvote, "bookreview": bookreview})
+    voting = BookReview.objects.annotate(num_votes=Count('uservote'))
+    return render(request, "viewvotes.html", {"voting": voting, "viewvote": viewvote, "bookreview": bookreview})
+
 
 @login_required()
 def book_vote(request):
     comment_form = UserCommentForm(request.POST or None)
     bookreview = BookReview.objects.all()
     if comment_form.is_valid():
-        bookvote = comment_form.save(commit=False)
-        bookvote.loggeduser = request.user
+        bookcomment = comment_form.save(commit=False)
+        bookcomment.loggeduser = request.user
         try:
-            bookvote.save()
+            bookcomment.save()
             messages.success(request, "You have voted")
         except IntegrityError:
             messages.error(request, "You have already voted this month")

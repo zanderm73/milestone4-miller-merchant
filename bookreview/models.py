@@ -12,15 +12,19 @@ class BookReview(models.Model):
     authorscomments = models.CharField(max_length=1000, default='')
     active = models.CharField(max_length=5, default='no')
     bookofthemonth = models.CharField(max_length=5, default='no')
-
+    vote = models.IntegerField(default=0)
+    
     def __str__(self):
         return self.bookname
+
+
 
 class UserVote(models.Model):
     loggeduser = models.ForeignKey(User)
     book = models.ForeignKey(BookReview)
     comment = models.CharField(max_length=100, default='')
     dateposted = models.DateTimeField(auto_now_add=True)
+
 
     class Meta:
         unique_together = ('loggeduser', 'book')

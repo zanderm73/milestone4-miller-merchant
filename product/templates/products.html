@@ -13,6 +13,7 @@
                 <p>Published by: {{ product.publisher }}</p>
                 <p>Reading time: {{ product.average_reading_time }} hours</p>
                 <p>Price: £{{ product.price }}</p>
+                <a href="{% url 'eachproduct' product.id %}" class="btn btn-primary custom-button col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2" class>View Book</a>
             </div>
         </div>
     {% endfor %}
