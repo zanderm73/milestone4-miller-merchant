@@ -1,9 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="col-xs-12 container title">
+
+    <!--page heading-->
     <h2 class="page-heading">Book Of The Month Winner - December</h2>
-</div>   
+</div> 
+
+    <!--div that displays the selected books information in a tidy manner -->
     {% for bookreview in bookreview %}
+
+        <!--allows the book of the month to be changed within djngo admin when book selection is changed-->
         {% if bookreview.bookofthemonth == "yes" %}
         <div class="bookreview-body">
             <div class="col-xs-12 col-md-6">
@@ -19,6 +25,8 @@
             <div class="col-xs-12">
                 <p>{{ bookreview.bookreview }}</p>
             </div>
+            
+            <!--message that updates the user on the availability-->
             <div class="col-xs-12">
                 <p>Update: All of the signed copies of Decembers book of the month have been sold. Head over to our store <a href="/">here</a> and pick up a standard copy so you do not miss out on this amazing story.</p>
             </div>            

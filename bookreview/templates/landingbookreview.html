@@ -2,8 +2,12 @@
 {% block content %}
 <div class="row row-flex">
     <div class="col-xs-12 container title">
+
+        <!--page heading-->
         <h2 class="page-heading">Book Of The Month</h2>
     </div>
+
+    <!--inroduction and explanantion of how book of the month works-->
     <div class="col-xs-12 container landing-page-description">
         <p>
             Each month we have a competition where you are able to vote and win. On the first of each month we 
@@ -29,6 +33,8 @@
             you waiting for? It is 100% free and always will be, just tap register at the top of the page.
         </p>
     </div>
+    
+    <!--links via buttons to navigate book of the month section -->
     <div class="col-xs-12 container landing-page-button-div">
         <div class="col-xs-12 col-md-4 text-center landing-button">
             <a href="{% url 'bookvote' %}" class="btn btn-primary btn-lg custom-button" role="button">Vote For Book Of The Month</a>

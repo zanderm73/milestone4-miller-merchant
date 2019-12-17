@@ -3,6 +3,8 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 
 # Create your models here.
+
+# model that allows book information to be stored on the database by the site admin
 class BookReview(models.Model):
     bookname = models.CharField(max_length=100, default='')
     bookimage = models.ImageField(upload_to='images', default='')
@@ -18,14 +20,14 @@ class BookReview(models.Model):
         return self.bookname
 
 
-
+# model that allows users comments and choice to be stored in the database
 class UserVote(models.Model):
     loggeduser = models.ForeignKey(User)
     book = models.ForeignKey(BookReview)
     comment = models.CharField(max_length=100, default='')
     dateposted = models.DateTimeField(auto_now_add=True)
 
-
+    # ensures a user can only vote for their preffered choice once
     class Meta:
         unique_together = ('loggeduser', 'book')
 
