@@ -1,6 +1,8 @@
 from django.db import models
 
 # Create your models here.
+
+# model that allows site admin to store publisher details
 class Publisher(models.Model):
     names = models.CharField(max_length=100, default='')
     city = models.CharField(max_length=100, default='')
@@ -10,6 +12,7 @@ class Publisher(models.Model):
         return self.names
 
 
+# model that allows site admin to store author details
 class Author(models.Model):
     name = models.CharField(max_length=100, default='name')
     author_bio = models.CharField(max_length=1000, default='author-bio')
@@ -20,7 +23,8 @@ class Author(models.Model):
     def __str__(self):
         return self.name
 
-
+# model that allows site admin to store product details, uses foreignkey to access the data from the models
+# above which creates a relationship and reduces repated tasks and time taken when certain changes must be made
 class Product(models.Model):
     title = models.CharField(max_length=100, default='')
     product_decription = models.CharField(max_length=1000, default='description')

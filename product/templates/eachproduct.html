@@ -4,7 +4,11 @@
 {% for product in product %}
     <div class="bookreview-body">
         <div class="col-xs-12 col-md-6">
+
+            <!--page heading -->
             <h3 class="page-heading">{{ product.title }}</h3>
+
+            <!--div class that displays selected books information stored in databse-->
             <p>Author: <a href="{% url 'eachauthor' product.id %}">{{ product.authors }}</a></p>
             <p>Publisher: {{ product.publisher }}</p>
             <p>Date Published: {{ product.date_published }}</p>
@@ -12,9 +16,13 @@
             <p>Reading Time: {{ product.average_reading_time }} hours</p>
             <p>£{{ product.price }}</p>
         </div>  
+
+        <!--selected authors image-->
         <div class="bookreview-image col-xs-12 col-md-6 text-center">
             <img class="bookimage" src= {{MEDIA_URL}}{{product.image}}>
         </div>
+
+        <!--add to cart function-->
         <div class="col-xs-6 col-xs-offset-3 col-md-6 col-md-offset-0 add-to-cart-eachproduct">    
             <form method="post" action="{% url 'add_to_cart' product.id %}">
                 {% csrf_token %}
@@ -29,6 +37,8 @@
                 </div>
             </form>
         </div> 
+
+        <!--back button that takes user back to homepage-->
         <div class="col-xs-12">
             <p>{{ product.product_decription }}</p>
             <a href="/" class="btn btn-primary custom-button" class>Back To Book List</a>

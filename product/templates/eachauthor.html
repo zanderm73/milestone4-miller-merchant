@@ -2,15 +2,22 @@
 {% block content %}
 {% for product in product %}
     <div class="bookreview-body">
+        <!--div class that displays each authors information stored in databse-->
         <div class="col-xs-12 col-md-6">
+
+            <!--page heading-->
             <h3 class="page-heading">{{ product.authors.name }}</h3>
             <p>Date Of Birth: {{ product.authors.date_of_birth }}</p>
             <p>Nationality: {{ product.authors.nationality }}</p>
             <p>{{ product.authors.author_bio }}</p>
         </div>  
+
+        <!--selected authors image-->
         <div class="bookreview-image col-xs-12 col-md-6 text-center">
             <img class="bookimage" src= {{MEDIA_URL}}{{product.authors.author_image}}>
         </div>
+
+        <!--back button that takes user back to selected book-->
         <div class="button">
             <a href="{{ request.META.HTTP_REFERER }}" class="btn btn-primary custom-button">Back To Book</a>
         </div>
