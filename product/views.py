@@ -19,7 +19,7 @@ def all_publishers(request):
     publisher = Product.objects.all()
     return render(request, "publisher.html", {"product": publisher})
 
-# renders a unque product page using pk which shows a more in depth view of the book
+# renders a unique product page using pk which shows a more in depth view of the book
 def each_product(request, pk):
     eachproduct = Product.objects.filter(pk=pk)
     return render(request, "eachproduct.html", {"product": eachproduct})

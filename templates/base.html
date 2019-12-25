@@ -1,7 +1,5 @@
 {% load staticfiles %}
-
 <html>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,8 +13,10 @@
     {% endblock head_js %}
 </head>
 <body>
+
+    <!--navbar-->
     <nav class="navbar navbar-inverse">
-    <div class="navigation">
+    <div class="navigation"> 
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -29,15 +29,23 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                <li><a href="{% url 'products' %}"> Store</a></li>
-                <li><a href="{% url 'reviewlanding' %}"> Book Of The Month</a></li>
+
+                    <!--links that appear in navbar to all users-->
+                    <li><a href="{% url 'products' %}"> Store</a></li>
+                    <li><a href="{% url 'reviewlanding' %}"> Book Of The Month</a></li>
+                    
+                    <!--links that appear in navbar when user is logged in-->
                     {% if user.is_authenticated %}
                         <li><a href="{% url 'profile' %}"> Profile</a></li>
                         <li><a href="{% url 'logout' %}"> Log Out</a></li>
                     {%  else %}
+
+                    <!--links that appears when user has not logged in-->
                         <li><a href="{% url 'registration' %}"> Register</a></li>
                         <li><a href="{% url 'login' %}"> Log In</a></li>
                     {% endif %}
+
+                    <!--cart count and link in the navbar-->
                     <li>
                         <a href="{% url 'view_cart' %}">
                             <i class="fa fa-shipping-cart"></i> Cart
@@ -51,6 +59,8 @@
         </div>
     </div>
     </nav>
+
+    <!--div that allows messages to appeart below the navbar-->
     {% if messages %}
                 {% for message in messages %}
         <div class="alert alert-{{ message.tags }}">
@@ -60,6 +70,8 @@
             </div>
         </div>
     {% endif %}
+
+    <!--search bar-->
     <div class="container">
         <div class="display">
             <form action="{% url 'search' %}" method="get">
@@ -69,6 +81,8 @@
         </div>
         {% block content %} {% endblock %}
     </div>
+
+    <!--footer-->
     <footer>
         <div class="footer">
             <p>Footer</p>

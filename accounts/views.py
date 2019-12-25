@@ -5,19 +5,24 @@ from django.contrib.auth.models import User
 from accounts.forms import UserLoginForm, UserRegistrationForm
 
 # Create your views here.
+
+
+# renders index.html page
 def index(request):
-    """Return the index.html file"""
     return render(request, 'index.html')
 
+
+# logouts out user from account and displays a message confirming this
 @login_required
 def logout(request):
-    """Log the user out"""
     auth.logout(request)
     messages.success(request, "You have successfully been logged out!")
     return redirect(reverse('index'))
 
+
+# renders the login page with form for registered users to complete, displays either an error or success
+# message once form is submitted                                              
 def login(request):
-    """Return a login page"""
     if request.user.is_authenticated:
         return redirect(reverse('index'))
     if request.method == "POST":
@@ -38,8 +43,9 @@ def login(request):
     return render(request, 'login.html', {'login_form': login_form})
 
 
+# renders registration page with form to allow new users to create an account, displays either error or success 
+# message once form is submitted
 def registration(request):
-    """Render the registration page"""
     if request.user.is_authenticated:
         return redirect(reverse('index'))
 
@@ -61,7 +67,8 @@ def registration(request):
     return render(request, 'registration.html', {
         "registration_form": registration_form})
 
+
+# renders users unique profile page
 def user_profile(request):
-    """The user's profile page"""
     user = User.objects.get(email=request.user.email)
     return render(request, 'profile.html', {"profile": user})
