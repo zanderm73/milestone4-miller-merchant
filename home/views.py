@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
+
+# renders index.html page
 def index(request):
-    """displays the index.html page"""
     return render(request, "index.html")

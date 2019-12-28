@@ -12,6 +12,24 @@ footer {
     background-color: #044e96;
 }
 
+.footer-link    {
+    color:white;
+}
+
+.footer-link:hover  {
+    color:#DBB04AFF;
+    text-decoration: none;
+}
+
+.footer-heading {
+    color: white;
+
+}
+
+.footer-design  {
+    color:#DBB04AFF;
+}
+
 .icon-bar {
     background-color: #4abdac;
 }
@@ -125,6 +143,10 @@ a {
 
 .landing-button {
     padding-bottom: 10px;
+}
+
+.custom-button-search   {
+    margin: 0px;
 }
 
 /*----------------bookreview--viewvote.html*/

@@ -1,7 +1,7 @@
 from django import forms
 from .models import Order
 
-
+# payment form, specific fields are required by stripe for transaction to be successful
 class MakePaymentForm(forms.Form):
 
     MONTH_CHOICES = [(i, i) for i in range(1, 12)]
@@ -13,7 +13,7 @@ class MakePaymentForm(forms.Form):
     expiry_year = forms.ChoiceField(label='Year', choices=YEAR_CHOICES, required=False)
     stripe_id = forms.CharField(widget=forms.HiddenInput)
 
-
+# form to gather delivery information from the user
 class OrderForm(forms.ModelForm):
 
     class Meta:

@@ -2,6 +2,8 @@ from django.db import models
 from product.models import Product
 
 # Create your models here.
+
+# model that allows the user to input their data during the order process when at checkout
 class Order(models.Model):
     full_name = models.CharField(max_length=50, blank=False)
     phone_number = models.CharField(max_length=20, blank=False)
@@ -17,6 +19,8 @@ class Order(models.Model):
         return "{0}-{1}-{2}".format(self.id, self.date, self.full_name)
 
 
+# model that brings together the customers data, products they have selected and quantity added to cart
+# to allow the user to progress to the payment page
 class OrderLineItem(models.Model):
     order = models.ForeignKey(Order, null=False)
     product = models.ForeignKey(Product, null=False)

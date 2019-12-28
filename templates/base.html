@@ -60,7 +60,7 @@
     </div>
     </nav>
 
-    <!--div that allows messages to appeart below the navbar-->
+    <!--div that allows messages to appear below the navbar-->
     {% if messages %}
                 {% for message in messages %}
         <div class="alert alert-{{ message.tags }}">
@@ -75,8 +75,8 @@
     <div class="container">
         <div class="display">
             <form action="{% url 'search' %}" method="get">
-                <input type="text" name="q">
-                <button type="submit">Search</button>
+                <input class="col-xs-6 col-xs-offset-2 text-center" type="text" placeholder="search for your favourite book" name="q">
+                <button type="submit" class="custom-button custom-button-search">Search</button>
             </form>
         </div>
         {% block content %} {% endblock %}
@@ -84,8 +84,26 @@
 
     <!--footer-->
     <footer>
-        <div class="footer">
-            <p>Footer</p>
+        <div class="footer container">
+            <div class="col-xs-12 col-sm-6">
+                <h4 class="footer-heading">About Us</h4>
+                <p>
+                    Miller Merchant was created in 2019 after we were fed up having to shop on book stores that
+                    felt so generic and impersonal. Here at Miller Merchant we are trying to build a community along 
+                    side running our store by having book of the month competitions and getting exclusive interviews 
+                    from some of the top authors in the world.
+                </p>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <h4 class="footer-heading">Site Navigation</h4>
+                <p><a class="footer-link" href="{% url 'products' %}">Home</a></p>
+                <p><a class="footer-link" href="{% url 'products' %}">Store</a></p>
+                <p><a class="footer-link" href="{% url 'reviewlanding' %}">Book Of The Month</a></p>
+                <p><a class ="footer-link" href="mailto:info@millermerchant.com">Contact Us</a></p>
+            </div>
+            <div class="footer-design col-xs-12 text-right">
+                <p>by DandelionDesigns</P>
+            </div>
         </div>
     </footer>
 </body>

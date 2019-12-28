@@ -32,7 +32,7 @@ def view_votes(request):
 # renders vote page with comment form, pulls in user details and saves the form information to database
 # renders all the books within bookreview for an improved UX experience
 # messages confirm the whether user has voted has succesfully, error message will appear if they have
-# already voted for sadi option
+# already voted for said option
 @login_required()
 def book_vote(request):
     comment_form = UserCommentForm(request.POST or None)

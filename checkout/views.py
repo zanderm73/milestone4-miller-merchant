@@ -9,9 +9,11 @@ from product.models import Product
 import stripe
 
 # Create your views here.
+
+# stripe api key location that has been included in gitignore file
 stripe.api_key = settings.STRIPE_SECRET
 
-
+# renders checkout page, takes users information and confirms if transaction has been successful
 @login_required()
 def checkout(request):
     if request.method == "POST":
