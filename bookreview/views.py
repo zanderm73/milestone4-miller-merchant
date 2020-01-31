@@ -16,9 +16,19 @@ def review_landing(request):
     return render(request, "landingbookreview.html", {"reviewlanding": reviewlanding})
 
 # renders an individual book, this is the book of the month
-def each_book_review(request):
+def current_book_review(request):
     bookreview = BookReview.objects.all()
     return render(request, "bookreview.html", {"bookreview": bookreview})
+
+# renders a list of the previous competition winner
+def review_list(request):
+    bookreview = BookReview.objects.all()
+    return render(request, "reviewlist.html", {"bookreview": bookreview})
+
+# renders an individual book review that previously won the book of the month competition
+def prev_book_review(request, pk):
+    bookreview = BookReview.objects.filter(pk=pk)
+    return render(request, "previousreview.html", {"bookreview": bookreview})
 
 # renders all books in bookreview and all comments in uservote votes and comments, voting allows comments made to uservote model to be counted 
 # and diplayed within bookreview model

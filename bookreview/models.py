@@ -14,6 +14,7 @@ class BookReview(models.Model):
     authorscomments = models.CharField(max_length=1000, default='')
     active = models.CharField(max_length=5, default='no')
     bookofthemonth = models.CharField(max_length=5, default='no')
+    monthwinner = models.CharField(max_length=20, default='none')
     vote = models.IntegerField(default=0)
     
     def __str__(self):

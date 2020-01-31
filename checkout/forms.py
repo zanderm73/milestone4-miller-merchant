@@ -12,6 +12,8 @@ class MakePaymentForm(forms.Form):
     expiry_month = forms.ChoiceField(label='Month', choices=MONTH_CHOICES, required=False)
     expiry_year = forms.ChoiceField(label='Year', choices=YEAR_CHOICES, required=False)
     stripe_id = forms.CharField(widget=forms.HiddenInput)
+    billing_address = forms.CharField(label='Registered Card Address', required=False)
+    street_postcode = forms.CharField(label='Registered Card Postcode', required=False)
 
 # form to gather delivery information from the user
 class OrderForm(forms.ModelForm):
@@ -19,7 +21,6 @@ class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
         fields = (
-            'full_name', 'phone_number', 'country', 'postcode',
-            'town_or_city', 'street_address1', 'street_address2',
-            'county'
+            'full_name', 'phone_number','delivery_address', 'city',
+            'postcode', 'country'
         )

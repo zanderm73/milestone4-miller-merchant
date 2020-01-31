@@ -3,9 +3,6 @@
     
     <!--displays the selected books information in a tidy manner-->
 {% for bookreview in bookreview %}
-
-    <!--only displays books that have 'yes' selected in bookofthemonth, can be changed by site admin-->
-    {% if bookreview.bookofthemonth == "yes" %}
 <div class="col-xs-12 container title">
 
     <!--page heading-->
@@ -28,15 +25,13 @@
 
         <!--message that updates the user on the availability-->
         <div class="col-xs-12">
-            <p>Update: All of the signed copies of {{ bookreview.monthwinner }}s book of the month have been sold. Head over to our store <a href="/">here</a> and pick up a standard copy so you do not miss out on this amazing story.</p>
-        </div>
-
-        <!--takes users to a list of previous winners-->
-        <div class="col-xs-12">
-            <p>{{ product.product_decription }}</p>
-            <a href="{% url 'reviewlist' %}" class="btn btn-primary custom-button" class>Read Previous Months Winners</a>
-        </div>
-    </div>         
-        {% endif %}
+            <p>Update: This is an archived review which means there are no special editions left, check in our store to to pick up a standard copy!</p>
+        </div>  
+        
+        <!--back button that takes the user back to review list-->
+        <div class="button col-xs-12">
+            <a href="{{ request.META.HTTP_REFERER }}" class="btn btn-primary custom-button">Back To Previous Winners List</a>
+        </div>          
+    </div>
     {% endfor %}
 {% endblock %}

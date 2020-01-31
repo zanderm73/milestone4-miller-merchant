@@ -86,6 +86,12 @@ a {
     max-height: 300px;
 }
 
+/*----------------bookreview--reviewlist.html*/
+
+.winner-list    {
+    padding-left: 15px;
+}
+
 /*--------------------------titles-headings*/
 .page-heading   {
     color: #044e96;
@@ -147,6 +153,15 @@ a {
 
 .custom-button-search   {
     margin: 0px;
+}
+
+.hover  {
+    color: #044e96;
+}
+
+.hover:hover    {
+    color: #d69d18;
+    text-decoration: none;
 }
 
 /*----------------bookreview--viewvote.html*/

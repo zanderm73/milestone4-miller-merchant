@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}    
+<div class="list-body">
+    <div class="col-xs-12 container title">
+
+        <!--page heading-->
+        <h2 class="page-heading">Previous Book Of The Month Winners</h2>
+    </div> 
+
+    <div class="winner-list">
+
+        <!--displays the selected books information in a tidy manner-->
+        {% for bookreview in bookreview %}
+
+            <!--only displays books that have 'yes' selected in bookofthemonth, can be changed by site admin-->
+            {% if bookreview.bookofthemonth == "past" %}
+        <div>
+            <h3 class= book-title><a class="hover" href="{% url 'previousreview' bookreview.id %}">{{ bookreview.monthwinner }} Book Of The Month - {{ bookreview.bookname}}</a></h3>
+        </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    <!--back button that takes user back to the current book of the month winner-->
+    <div class="col-xs-12">
+        <p>{{ product.product_decription }}</p>
+        <a href="{% url 'currentbookreview' %}" class="btn btn-primary custom-button" class>Back To This Months Winner</a>
+    </div>
+</div>
+{% endblock %}

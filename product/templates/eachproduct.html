@@ -8,7 +8,7 @@
             <h3 class="page-heading">{{ product.title }}</h3>
 
             <!--div class that displays selected books information stored in databse-->
-            <p>Author: <a href="{% url 'eachauthor' product.id %}">{{ product.authors }}</a></p>
+            <p>Author: <a class="hover" href="{% url 'eachauthor' product.id %}">{{ product.authors }}</a></p>
             <p>Publisher: {{ product.publisher }}</p>
             <p>Date Published: {{ product.date_published }}</p>
             <p>Genre: {{ product.genre }}</p>
