@@ -1,10 +1,12 @@
 chardet==3.0.4
+dj-database-url==0.5.0
 Django==1.11.17
 django-forms-bootstrap==3.1.0
 idna==2.8
 mysql==0.0.2
 mysqlclient==1.4.4
 Pillow==6.1.0
+psycopg2==2.8.4
 pytz==2019.2
 requests==2.22.0
 stripe==2.36.2
