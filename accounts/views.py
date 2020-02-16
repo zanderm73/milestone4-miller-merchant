@@ -6,7 +6,6 @@ from accounts.forms import UserLoginForm, UserRegistrationForm
 
 # Create your views here.
 
-
 # renders index.html page
 def index(request):
     return render(request, 'index.html')
@@ -31,10 +30,9 @@ def login(request):
         if login_form.is_valid():
             user = auth.authenticate(username=request.POST['username'],
                                     password=request.POST['password'])
-            messages.success(request, 'You have logged in, welcome back'),
-
             if user:
                 auth.login(user=user, request=request)
+                messages.success(request, 'You have logged in, welcome back'),
                 return redirect(reverse('index'))
             else:
                 login_form.add_error(None, "Your username or password is incorrect")
