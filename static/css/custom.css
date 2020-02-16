@@ -44,6 +44,23 @@ a {
     color:#044e96;
 }
 
+.badge {
+    padding-left: 9px;
+    padding-right: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+}
+
+.label-warning[href],
+.badge-warning[href] {
+    background-color: #c67605;
+}
+
+caption p {
+    word-wrap: break-word;
+}
+
 /*-----------------------------panels-layout*/
 .panel-default {
     border-color: transparent;
@@ -87,7 +104,6 @@ a {
 }
 
 /*----------------bookreview--reviewlist.html*/
-
 .winner-list    {
     padding-left: 15px;
 }
@@ -183,8 +199,7 @@ a {
     min-height: 40px;
 }
 
-/*------NOT-FILTERED-----*/
-
+/*----------------checkout--checkout-cart*/
 .add-to-cart-eachproduct    {
     margin-top: 10px;
 }
@@ -199,21 +214,4 @@ a {
 
 .cart-page-style   {
     color: #044e96;
-}
-
-.badge {
-    padding-left: 9px;
-    padding-right: 9px;
-    -webkit-border-radius: 9px;
-    -moz-border-radius: 9px;
-    border-radius: 9px;
-}
-
-.label-warning[href],
-.badge-warning[href] {
-    background-color: #c67605;
-}
-
-caption p {
-    word-wrap: break-word;
 }
