@@ -27,7 +27,7 @@ class Author(models.Model):
 # above which creates a relationship and reduces repated tasks and time taken when certain changes must be made
 class Product(models.Model):
     title = models.CharField(max_length=100, default='')
-    product_decription = models.CharField(max_length=1000, default='description')
+    product_decription = models.CharField(max_length=10000, default='description')
     image = models.ImageField(upload_to='images', default='')
     authors = models.ForeignKey(Author)
     publisher = models.ForeignKey(Publisher)

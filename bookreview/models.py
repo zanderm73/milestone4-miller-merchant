@@ -10,7 +10,7 @@ class BookReview(models.Model):
     bookimage = models.ImageField(upload_to='images', default='')
     bookauthor = models.CharField(max_length=100, default='')
     bookpublisher = models.CharField(max_length=100, default='')
-    bookreview = models.CharField(max_length=1000, default='')
+    bookreview = models.CharField(max_length=10000, default='')
     authorscomments = models.CharField(max_length=1000, default='')
     active = models.CharField(max_length=5, default='no')
     bookofthemonth = models.CharField(max_length=5, default='no')
