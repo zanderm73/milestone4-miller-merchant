@@ -21,6 +21,11 @@
             <img class="bookimage" src= {{MEDIA_URL}}{{product.image}}>
         </div>
 
+        <!--product description-->
+        <div class="col-xs-12">
+            <p>{{ product.product_decription }}</p>
+        </div>
+
         <!--add to cart function-->
         <div class="col-xs-6 col-xs-offset-3 col-md-6 col-md-offset-0 add-to-cart-eachproduct">    
             <form method="post" action="{% url 'add_to_cart' product.id %}">
@@ -39,7 +44,6 @@
 
         <!--back button that takes user back to homepage-->
         <div class="col-xs-12">
-            <p>{{ product.product_decription }}</p>
             <a href="/" class="btn btn-primary custom-button" class>Back To Book List</a>
         </div>
     </div>

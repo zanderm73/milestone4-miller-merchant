@@ -61,8 +61,13 @@ caption p {
     word-wrap: break-word;
 }
 
+/*------------------------------------images*/
+.bookreview-image {
+    padding-bottom: 10px;
+}
+
 /*-----------------------------panels-layout*/
-.panel-default {
+.panel-default  {
     border-color: transparent;
     padding: 0 10px;
 }
@@ -179,10 +184,6 @@ caption p {
     color: #d69d18;
     text-decoration: none;
 }
-
-/*----------------bookreview--viewvote.html*/
-
-
 
 /*----------------product--products.html*/
 .product {
