@@ -15,7 +15,7 @@
             <!--only displays books that have 'yes' selected in bookofthemonth, can be changed by site admin-->
             {% if bookreview.bookofthemonth == "past" %}
         <div>
-            <h3 class= book-title><a class="hover" href="{% url 'previousreview' bookreview.id %}">{{ bookreview.monthwinner }} Book Of The Month - {{ bookreview.bookname}}</a></h3>
+            <h3 class= book-title><a class="hover" href="{% url 'previousreview' bookreview.id %}">{{ bookreview.monthwinner }} Book Of The Month - {{ bookreview.booknamereview}}</a></h3>
         </div>
             {% endif %}
         {% endfor %}

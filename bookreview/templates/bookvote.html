@@ -11,23 +11,20 @@
         </div>
 
         <!--panels used to display the information in bookreview-->
-        {% for bookreview in bookreview %}
-            {% if bookreview.active == "yes" %}
-                <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 panel panel-default text-center">
-                    <div class="panel-heading panel-heading-custom"><h4 class="product-title">{{ bookreview.bookname }}</h4></div>
-                    <div class="panel-body panel-viewvotes">
-                        <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ bookreview.bookimage }}')"></div>
-                        <p>By: {{ bookreview.bookauthor }}</p>
-                        <p>Authors Comments: {{ bookreview.authorscomments }}</p>
-                    </div>
+        {% for bookchoice in bookchoice %}
+            <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 panel panel-default text-center">
+                <div class="panel-heading panel-heading-custom"><h4 class="product-title">{{ bookchoice.booknamechoice }}</h4></div>
+                <div class="panel-body panel-viewvotes">
+                    <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ bookchoice.bookchoiceimage }}')"></div>
+                    <p>By: {{ bookchoice.bookchoiceauthor }}</p>
+                    <p>Authors Comments: {{ bookchoice.authorschoicecomments }}</p>
                 </div>
-            {% endif %}
+            </div>
         {% endfor %}
         <div class="col-xs-12 col-xs-ofssfset-1 form-section">    
             <div>
                 <h4 class="page-heading">Select from one of the books above and write why you want it to win</h4>
             </div>
-
             <!--comment form and submission button-->
             <form method="POST">
                 <div class="form-group">

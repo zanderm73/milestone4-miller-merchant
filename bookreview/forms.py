@@ -1,5 +1,5 @@
 from django import forms
-from .models import BookReview, UserVote
+from .models import BookReview, BookChoice, UserVote
 
 # form to allow users to select book and comment on their choice
 class UserCommentForm(forms.ModelForm):

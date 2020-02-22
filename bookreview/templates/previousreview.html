@@ -10,11 +10,10 @@
 </div> 
     <div class="bookreview-body">
         <div class="col-xs-12 col-md-6">
-            <h3 class="page-heading">{{ bookreview.bookname }}</h3>
+            <h3 class="page-heading">{{ bookreview.booknamereview }}</h3>
             <p>Publisher: {{ bookreview.bookpublisher }}</p>
             <p>Author: {{ bookreview.bookauthor }}</p>
             <p>Comment from the author: {{ bookreview.authorscomments }}</p>
-            <p>The random raffle winner is James Bond, hope you like your signed copy</p>
         </div>  
         <div class="bookreview-image col-xs-12 col-md-6 text-center">
             <img class="bookimage" src= {{MEDIA_URL}}{{bookreview.bookimage}}>
