@@ -147,7 +147,7 @@ had been deployed using Heroku. Below is the explanation of what testing was don
 
 ### Manual Testing
 - Accessing and navigating the site on multiple browsers
-	1.  	Accessing Miller Merchant using the different browsers to ensure that everything is displayed correctly. The browsers used were 
+	1.  Accessing Miller Merchant using the different browsers to ensure that everything is displayed correctly. The browsers used were 
     safari, chrome and internet explorer. 
 	2. 	All links in the nav bar and footer were selected to make sure they were all live. This was done while logged in being a registered 
     user and browsing as a guest.
