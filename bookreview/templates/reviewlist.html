@@ -4,7 +4,7 @@
     <div class="col-xs-12 container title">
 
         <!--page heading-->
-        <h2 class="page-heading">Previous Book Of The Month Winners</h2>
+        <h2 class="page-heading">Previous Reviews Of Winning Books</h2>
     </div> 
 
     <div class="winner-list">
@@ -15,7 +15,7 @@
             <!--only displays books that have 'yes' selected in bookofthemonth, can be changed by site admin-->
             {% if bookreview.bookofthemonth == "past" %}
         <div>
-            <h3 class= book-title><a class="hover" href="{% url 'previousreview' bookreview.id %}">{{ bookreview.monthwinner }} Book Of The Month - {{ bookreview.booknamereview}}</a></h3>
+            <p class="book-title">{{ bookreview.monthwinner }}'s Winning Book: <a class="hover" href="{% url 'previousreview' bookreview.id %}"><b>{{ bookreview.booknamereview}}</b></a></p>
         </div>
             {% endif %}
         {% endfor %}

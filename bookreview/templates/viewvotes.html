@@ -31,10 +31,9 @@
     </div>
     {% for uservote in viewvote %}
     <div class="panel-body col-xs-12 comment-box">
-        <p>{{ uservote.loggeduser }}</p>
-        <p>{{ uservote.book }}</p>
-        <p>{{ uservote.comment }}</p>
-        <p>{{ uservote.book.bookauthor }}</p>
+        <h4 class="page-heading">{{ uservote.loggeduser }}</h4>
+        <p>Voted for: <b class="pe-heading">{{ uservote.book }}</b></p>
+        <p><i>"{{ uservote.comment }}"</i></p>
     </div>    
     {% endfor %} 
 </div> 

@@ -7,8 +7,8 @@
 
             <!--page heading-->
             <h3 class="page-heading">{{ product.authors.name }}</h3>
-            <p>Date Of Birth: {{ product.authors.date_of_birth }}</p>
-            <p>Nationality: {{ product.authors.nationality }}</p>
+            <p>Date Of Birth: <b>{{ product.authors.date_of_birth }}</b></p>
+            <p>Nationality: <b>{{ product.authors.nationality }}</b></p>
             <p>{{ product.authors.author_bio }}</p>
         </div>  
 
@@ -18,7 +18,7 @@
         </div>
 
         <!--back button that takes user back to selected book-->
-        <div class="button">
+        <div class="button col-xs-12">
             <a href="{{ request.META.HTTP_REFERER }}" class="btn btn-primary custom-button">Back To Book</a>
         </div>
     </div>

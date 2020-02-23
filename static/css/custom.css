@@ -113,6 +113,15 @@ caption p {
     padding-left: 15px;
 }
 
+
+/*----------------bookreview--viewvote.html*/
+@media screen and (max-width: 992px) {
+    .comment-box {
+        text-align: center;
+    }
+}
+
+
 /*--------------------------titles-headings*/
 .page-heading   {
     color: #044e96;
