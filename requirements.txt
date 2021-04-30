@@ -17,5 +17,5 @@ pytz==2019.2
 requests==2.22.0
 s3transfer==0.3.3
 stripe==2.36.2
-urllib3==1.25.5
+urllib3==1.25.8
 whitenoise==5.0.1
